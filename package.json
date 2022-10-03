@@ -1,0 +1,31 @@
+{
+  "name": "api-pick-up-packages",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "nodemon -r dotenv/config src/index.js dotenv_config_path=env/.env.local"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jholgin/api-pick-up-packages.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jholgin/api-pick-up-packages/issues"
+  },
+  "homepage": "https://github.com/jholgin/api-pick-up-packages#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.1",
+    "mongodb": "^4.10.0",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
