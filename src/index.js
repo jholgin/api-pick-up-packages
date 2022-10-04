@@ -3,6 +3,7 @@ import cors from "cors";
 import morgan from "morgan";
 import { orderRouter } from "./routes/order.js";
 import { connectDB } from "./config/db.js";
+import { authRouter } from "./routes/auth.js";
 
 // Crear app de express
 const app = express();
@@ -22,6 +23,8 @@ app.use(express.json());
 
 /* ------ Rutas ------ */
 app.use("/api", orderRouter);
+
+app.use("/api", authRouter);
 
 /* ------ Colocar en escucha el servidor ------ */
 app.listen(process.env.PORT || 3000, () => {
