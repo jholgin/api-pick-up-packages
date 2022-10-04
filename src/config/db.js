@@ -24,6 +24,8 @@ const prueba = async (client) => {
   databases.databases.map((db) => {
     console.log(db.name);
   });
+
+  // client.db('instaya_db').admin().find({_id:})
 };
 
 // Retornar la instancia de la conexion
