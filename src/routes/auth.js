@@ -1,17 +1,20 @@
-import { Router } from "express";
-import { getOrders } from "../controller/getOrders.js";
-import { getConnecion, prueba } from "../config/db.js";
+const express = require('express');
+const getOrders = require('../controller/getOrders');
+const db = require('../config/db');
+const getUsers = require('../controller/auth/getUsers');
+const createUser = require('../controller/auth/createUser')
+const loginUser = require('../controller/auth/loginUser')
+
 
 // Router
-const router = Router();
+const router = express.Router();
 
 // Obtener todas las ordenes
-router.get("/auth/login",getOrders);
+router.get("/auth",getUsers.getUsers);
 
-router.get("/auth/register", (req, res) => {
-  res.send("Ordenes");
-  prueba(getConnecion());
-});
+router.post("/auth/login",loginUser.loginUser);
 
+router.post("/auth/register",createUser.createUser);
 
-export { router as authRouter };
+module.exports = router
+

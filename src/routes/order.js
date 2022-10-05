@@ -1,21 +1,18 @@
-import { Router } from "express";
-import { getOrders } from "../controller/getOrders.js";
-import { getConnecion, prueba } from "../config/db.js";
+const express = require('express')
+const getOrders = require('../controller/order/getOrders')
+const createOrder = require('../controller/order/createOrder')
+const updateOrder = require('../controller/order/updateOrder')
+const db = require('../config/db');
+
 
 // Router
-const router = Router();
+const router = express.Router();
 
 // Obtener todas las ordenes
-router.get("/orders/",getOrders);
+router.get("/orders/",getOrders.getOrders);
 
-router.get("/orders/create", (req, res) => {
-  res.send("Ordenes create");
-  prueba(getConnecion());
-});
+router.post("/orders/create",createOrder.createOrder);
 
-router.get("/orders/edit/", (req, res) => {
-  res.send("Ordenes edit");
-  prueba(getConnecion());
-});
+router.patch("/orders/edit/:orderId", updateOrder.updateOrder);
 
-export { router as orderRouter };
+module.exports = router

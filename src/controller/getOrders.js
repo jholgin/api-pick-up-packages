@@ -1,8 +1,11 @@
-import { getConnecion, prueba } from "../config/db.js";
+const MongoDb = require('mongodb')
 
 
-export const getOrders =  (req, res) => {
+const getOrders =  (req, res) => {
     res.send("Ordenes");
-    prueba(getConnecion());
+    const connection = MongoDb.getConnecion;
+    MongoDb.prueba;
   }
 
+
+exports.getOrders = getOrders;

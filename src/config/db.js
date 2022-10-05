@@ -1,7 +1,7 @@
-import { MongoClient } from "mongodb";
+const MongoDb = require('mongodb')
 
 // Instancia de la base de datos
-const client = new MongoClient(process.env.MONGODB_HOST);
+const client = new MongoDb.MongoClient(process.env.MONGODB_HOST);
 
 const connectDB = async () => {
   try {
@@ -33,4 +33,6 @@ const getConnecion = () => {
   return client;
 };
 
-export { connectDB, getConnecion, prueba };
+exports.connectDB = connectDB;
+exports.getConnecion = getConnecion;
+exports.prueba = prueba;
