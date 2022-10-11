@@ -22,7 +22,7 @@ app.use((req,res,next) => {
 
 
 /* ------ Configuraciones ------ */
-MongoDB.connectDB();
+//MongoDB.connectDB();
 
 /* ------ Middlewares ------ */
 // Agregar soporte de cors

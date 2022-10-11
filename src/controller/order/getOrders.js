@@ -11,7 +11,7 @@ const getOrders = async (rec,res,next) => {
         return next(error);
     }
 
-    res.json({users: orders.map(user => user.toObject({getters:true}))});
+    res.json({orders: orders.map(user => user.toObject({getters:true}))});
 };
 
 
