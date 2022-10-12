@@ -5,7 +5,8 @@
   "type": "commonjs",
   "main": "src/index.js",
   "scripts": {
-    "dev": "nodemon -r dotenv/config src/index.js dotenv_config_path=env/.env.local"
+    "dev": "nodemon -r dotenv/config src/index.js dotenv_config_path=env/.env.local",
+    "start:prod": "node src/index.js"
   },
   "repository": {
     "type": "git",
